@@ -1,0 +1,40 @@
+{
+  "name": "order-cancellation-predictor-skill",
+  "version": "1.0.0",
+  "description": "Predict order cancellation risk based on customer profiles and checkout attributes.",
+  "author": "alphaparkinc",
+  "category": "analytics",
+  "tags": [
+    "cancellation",
+    "risk",
+    "predictive",
+    "order-management",
+    "fraud"
+  ],
+  "inputs": {
+    "payment_status": {
+      "type": "string",
+      "description": "Payment status: authorized, pending, or failed."
+    },
+    "days_since_first_order": {
+      "type": "integer",
+      "description": "Customer age in days."
+    },
+    "total_item_qty": {
+      "type": "integer",
+      "description": "Total quantity of items in the order."
+    }
+  },
+  "outputs": {
+    "cancellation_probability": {
+      "type": "number",
+      "description": "Estimated probability of cancellation (0.0 to 1.0)."
+    },
+    "risk_tier": {
+      "type": "string",
+      "description": "Risk assessment level (low, medium, high)."
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
